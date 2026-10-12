@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Respira DF — Saúde mental e equilíbrio digital</title>
+<title>Wellmind — Saúde mental e equilíbrio digital</title>
 <meta name="description" content="Informações confiáveis sobre saúde mental, autocuidado, equilíbrio digital e onde buscar ajuda no Distrito Federal.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,6 +77,20 @@ details[open] > .acc-sum .chev{transform:rotate(180deg)}
 .nav-list{padding:0 16px 8px !important}
 .footer{padding:32px 16px !important}
 }
+.car-ctrl{display:none}
+@media (max-width: 1100px){
+.apps-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+}
+@media (max-width: 900px){
+.car{display:flex !important;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px !important;margin:0 -24px;padding:4px 24px 12px;scroll-padding-inline:24px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.car::-webkit-scrollbar{display:none}
+.car:focus-visible{outline:3px solid #1F1A1B;outline-offset:-3px}
+.car > .app-card{flex:0 0 min(85%, 340px) !important;scroll-snap-align:start}
+.car-ctrl{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:6px}
+}
+@media (max-width: 640px){
+.car{margin:0 -16px;padding:4px 16px 12px;scroll-padding-inline:16px}
+}
 
 #app{font-family:var(--fonte);font-size:var(--tamanho);line-height:var(--altura-linha);letter-spacing:var(--esp-letra);word-spacing:var(--esp-palavra);color:#1F1A1B;background:#FFFFFF;min-height:100vh}
 .toggle{min-height:64px;padding:10px 14px;border-radius:14px;text-align:left;font-family:inherit;font-size:0.95em;cursor:pointer;border:2px solid #C8102E;background:#FFFFFF;color:#1F1A1B}
@@ -140,7 +154,6 @@ Ajustes de leitura e acessibilidade
 </div>
 <div style="margin-top: 14px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between">
 <button type="button" id="btn-restaurar" style="min-height: 44px; padding: 0 18px; border-radius: 999px; border: 2px solid #1F1A1B; background: transparent; color: #1F1A1B; font-family: inherit; font-weight: 700; cursor: pointer">Restaurar padrão</button>
-<a href="#acessibilidade">Saiba mais sobre a acessibilidade desta página</a>
 </div>
 </div>
 </div>
@@ -149,7 +162,7 @@ Ajustes de leitura e acessibilidade
 <div class="header-inner" style="max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
 <a href="#inicio" class="brand" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #FFFFFF">
 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="18" cy="18" r="15"></circle><path d="M9 20c3-4 6-4 9 0s6 4 9 0"></path><path d="M9 14c3-4 6-4 9 0s6 4 9 0" opacity="0.6"></path></svg>
-<span style="font-family: Lexend, sans-serif; font-weight: 700; font-size: 1.3em; letter-spacing: -0.01em">Respira DF</span>
+<span style="font-family: Lexend, sans-serif; font-weight: 700; font-size: 1.3em; letter-spacing: -0.01em">Wellmind</span>
 </a>
 <nav aria-label="Seções da página">
 <details class="navmenu" open>
@@ -159,7 +172,7 @@ Ajustes de leitura e acessibilidade
 <li><a href="#autocuidado" style="color: #FFFFFF; text-decoration: none; padding: 10px 0; display: inline-block">Autocuidado</a></li>
 <li><a href="#equilibrio-digital" style="color: #FFFFFF; text-decoration: none; padding: 10px 0; display: inline-block">Equilíbrio digital</a></li>
 <li><a href="#ajuda" style="color: #FFFFFF; text-decoration: none; padding: 10px 0; display: inline-block; font-weight: 700">Onde buscar ajuda</a></li>
-<li><a href="#acessibilidade" style="color: #FFFFFF; text-decoration: none; padding: 10px 0; display: inline-block">Acessibilidade</a></li>
+<li><a href="#apps" style="color: #FFFFFF; text-decoration: none; padding: 10px 0; display: inline-block">Apps e apoio</a></li>
 </ul>
 </details>
 </nav>
@@ -186,7 +199,7 @@ Ajustes de leitura e acessibilidade
 <li><a href="#autocuidado">Autocuidado no dia a dia</a> · 2 min</li>
 <li><a href="#equilibrio-digital">Equilíbrio digital</a> · 2 min</li>
 <li><a href="#ajuda">Onde buscar ajuda no DF</a> · 3 min</li>
-<li><a href="#acessibilidade">Acessibilidade desta página</a> · 1 min</li>
+<li><a href="#apps">Aplicativos e apoio nas redes</a> · 2 min</li>
 </ol>
 <p style="margin: 14px 0 0; font-size: 0.92em; color: #4D4446">Leia no seu ritmo. Você pode pular para qualquer parte.</p>
 </nav>
@@ -366,11 +379,6 @@ Ajustes de leitura e acessibilidade
 <li><strong>Lembretes e listas</strong> no celular para organizar tarefas e rotina.</li>
 </ul>
 </div>
-<div class="card" style="flex: 1 1 340px; min-width: 0; background: #FFFFFF; border: 1px solid #E6DEDF; border-radius: 20px; padding: 26px">
-<h3 style="margin: 0 0 10px; font-family: Lexend, sans-serif; font-size: 1.2em">SAMia: assistente da Saúde do DF</h3>
-<p style="margin: 0 0 14px">Ferramenta gratuita da Secretaria de Saúde do DF. É anônima: faz perguntas e indica qual serviço da rede combina com o seu caso. Também traz exercícios de respiração. Não substitui o atendimento presencial.</p>
-<a href="https://samia.app.br/app-samia" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; background: #C8102E; color: #FFFFFF; text-decoration: none; font-weight: 700">Acessar a SAMia</a>
-</div>
 </div>
 <p style="margin: 24px 0 0">Tem crianças ou adolescentes em casa? Veja o guia do Governo Federal <a href="https://www.gov.br/secom/pt-br/assuntos/uso-de-telas-por-criancas-e-adolescentes/guia">“Crianças, Adolescentes e Telas”</a>.</p>
 </div>
@@ -379,7 +387,7 @@ Ajustes de leitura e acessibilidade
 <section class="sec" id="ajuda" aria-labelledby="t-ajuda" style="padding: 64px 20px; background: #FFFFFF">
 <div style="max-width: 1180px; margin: 0 auto">
 <h2 class="h2" id="t-ajuda" style="margin: 0 0 14px; font-family: Lexend, sans-serif; font-size: 2em; letter-spacing: -0.01em">Onde buscar ajuda no Distrito Federal</h2>
-<p class="tint" style="margin: 0 0 28px; padding: 14px 18px; background: #FBEBEE; border-radius: 12px; max-width: 760px"><strong>Em poucas palavras:</strong> em emergência, ligue 192. Para conversar, ligue 188. Para começar um cuidado, procure a UBS perto de casa. Muitos serviços atendem sem agendamento.</p>
+<p class="tint" style="margin: 0 0 28px; padding: 14px 18px; background: #FBEBEE; border-radius: 12px; max-width: 760px"><strong>Em poucas palavras:</strong> em emergência, ligue 192. Para começar um cuidado, procure a UBS perto de casa. Casos graves vão direto ao CAPS. Para conversar, ligue 188. Muitos serviços atendem sem agendamento.</p>
 
 <div class="grid1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(max(min(100%, 280px), calc((100% - 40px) / 3)), 1fr)); gap: 20px">
 
@@ -393,19 +401,9 @@ Ajustes de leitura e acessibilidade
 </ul>
 </div>
 
-<div class="card" style="background: #FFFFFF; border: 1px solid #E6DEDF; border-radius: 20px; padding: 26px">
-<p style="margin: 0 0 6px; font-weight: 700; color: #A30D25; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8em">2 · Conversar agora · 24 horas</p>
-<h3 style="margin: 0 0 10px; font-family: Lexend, sans-serif; font-size: 1.25em">CVV: Centro de Valorização da Vida</h3>
-<p style="margin: 0 0 12px">Apoio emocional gratuito e sigiloso, todos os dias.</p>
-<ul style="margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px">
-<li>Telefone: <strong><a href="tel:188">188</a></strong> (ligação gratuita)</li>
-<li>Prefere escrever? Use o <a href="https://cvv.org.br/chat">chat</a> ou o <a href="https://cvv.org.br/e-mail">e-mail</a> do CVV.</li>
-</ul>
-</div>
-
 <details class="card acc" open style="background: #FFFFFF; border: 1px solid #E6DEDF; border-radius: 20px; padding: 26px">
 <summary class="acc-sum">
-<span class="acc-label" style="margin: 0 0 6px; font-weight: 700; color: #A30D25; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8em">3 · Primeiro passo · casos leves e moderados</span>
+<span class="acc-label" style="margin: 0 0 6px; font-weight: 700; color: #A30D25; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8em">2 · Primeiro passo · casos leves e moderados</span>
 <h3 style="margin: 0 0 10px; font-family: Lexend, sans-serif; font-size: 1.25em">Unidade Básica de Saúde (UBS)</h3>
 <svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
 </summary>
@@ -417,7 +415,7 @@ Ajustes de leitura e acessibilidade
 
 <details class="card acc" open style="background: #FFFFFF; border: 1px solid #E6DEDF; border-radius: 20px; padding: 26px">
 <summary class="acc-sum">
-<span class="acc-label" style="margin: 0 0 6px; font-weight: 700; color: #A30D25; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8em">4 · Atendimento especializado · porta aberta</span>
+<span class="acc-label" style="margin: 0 0 6px; font-weight: 700; color: #A30D25; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8em">3 · Atendimento especializado · porta aberta</span>
 <h3 style="margin: 0 0 10px; font-family: Lexend, sans-serif; font-size: 1.25em">CAPS: Centros de Atenção Psicossocial</h3>
 <svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
 </summary>
@@ -430,6 +428,16 @@ Ajustes de leitura e acessibilidade
 <p style="margin: 0; font-size: 0.95em; color: #4D4446">Leve documento com foto, Cartão SUS e comprovante de residência (não exigidos para pessoas em situação de rua). Endereços no <a href="https://www.saude.df.gov.br">site da SES-DF</a>.</p>
 </div>
 </details>
+
+<div class="card" style="background: #FFFFFF; border: 1px solid #E6DEDF; border-radius: 20px; padding: 26px">
+<p style="margin: 0 0 6px; font-weight: 700; color: #A30D25; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8em">4 · Conversar agora · 24 horas</p>
+<h3 style="margin: 0 0 10px; font-family: Lexend, sans-serif; font-size: 1.25em">CVV: Centro de Valorização da Vida</h3>
+<p style="margin: 0 0 12px">Apoio emocional gratuito e sigiloso, todos os dias.</p>
+<ul style="margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px">
+<li>Telefone: <strong><a href="tel:188">188</a></strong> (ligação gratuita)</li>
+<li>Prefere escrever? Use o <a href="https://cvv.org.br/chat">chat</a> ou o <a href="https://cvv.org.br/e-mail">e-mail</a> do CVV.</li>
+</ul>
+</div>
 
 <details class="card acc" open style="background: #FFFFFF; border: 1px solid #E6DEDF; border-radius: 20px; padding: 26px">
 <summary class="acc-sum">
@@ -455,7 +463,7 @@ Ajustes de leitura e acessibilidade
 <p style="margin: 0 0 12px">Atendimento por estudantes supervisionados por professores. As vagas abrem em períodos: entre em contato antes.</p>
 <ul style="margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px">
 <li><strong>CAEP/UnB</strong>: comunidade interna e externa. <a href="tel:+556131071680">(61) 3107-1680</a></li>
-<li>Clínicas de Psicologia do <strong>IESB</strong>, <strong>UDF</strong>, <strong>CEUB</strong>, <strong>UCB</strong> e <strong>UNIP</strong></li>
+<li>Clínicas de Psicologia do <strong>IESB</strong>, <strong>UDF</strong>, <strong>CEUB</strong>, <strong>UNIEURO</strong>, <strong>UCB</strong> e <strong>UNIP</strong></li>
 </ul>
 </div>
 </details>
@@ -465,49 +473,69 @@ Ajustes de leitura e acessibilidade
 </div>
 </section>
 
-<section class="sec" id="acessibilidade" aria-labelledby="t-acess" style="padding: 64px 20px; background: #F7F4F4">
+<section class="sec" id="apps" aria-labelledby="t-apps" style="padding: 64px 20px; background: #F7F4F4">
 <div style="max-width: 1180px; margin: 0 auto">
-<h2 class="h2" id="t-acess" style="margin: 0 0 14px; font-family: Lexend, sans-serif; font-size: 2em; letter-spacing: -0.01em">Acessibilidade desta página</h2>
-<p class="tint" style="margin: 0 0 28px; padding: 14px 18px; background: #FBEBEE; border-radius: 12px; max-width: 760px"><strong>Em poucas palavras:</strong> este site foi feito para ser usado por todas as pessoas, com ou sem deficiência, e por pessoas neurodivergentes.</p>
-<div class="grid1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(max(min(100%, 280px), calc((100% - 16px) / 2)), 1fr)); gap: 16px">
-<details class="card acc" open style="background: #FFFFFF; border-radius: 16px; padding: 22px">
-<summary class="acc-sum">
-<h3 style="margin: 0 0 8px; font-family: Lexend, sans-serif; font-size: 1.1em">Pessoas cegas ou com baixa visão</h3>
-<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
-</summary>
-<div class="acc-body">
-<p style="margin: 0">Estrutura de títulos para leitores de tela, texto ajustável até 150%, alto contraste e leitura do resumo em voz alta.</p>
+<h2 class="h2" id="t-apps" style="margin: 0 0 14px; font-family: Lexend, sans-serif; font-size: 2em; letter-spacing: -0.01em">Aplicativos e apoio nas redes</h2>
+<p class="tint" style="margin: 0 0 28px; padding: 14px 18px; background: #FBEBEE; border-radius: 12px; max-width: 760px"><strong>Em poucas palavras:</strong> alguns aplicativos e perfis de profissionais ajudam no dia a dia. Eles complementam o cuidado, mas não substituem o acompanhamento com um profissional.</p>
+<div id="apps-track" class="apps-grid car" role="region" aria-roledescription="carrossel" aria-label="Aplicativos de apoio" tabindex="0" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px">
+<div class="card app-card" style="background: #FFFFFF; border: 1px solid #E6DEDF; border-radius: 18px; padding: 24px; display: flex; flex-direction: column">
+<span style="display: block; margin: 0 0 10px; font-weight: 700; color: #A30D25; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8em">Para jovens de 13 a 24 anos</span>
+<svg class="deco" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path><path d="M9 11h6"></path><path d="M9 14h4"></path></svg>
+<h3 style="margin: 12px 0 8px; font-family: Lexend, sans-serif; font-size: 1.2em">Pode Falar</h3>
+<p style="margin: 0 0 10px">Plataforma do Ministério da Saúde com o Unicef. Começa com um chatbot com conteúdos sobre saúde mental e, se você precisar, encaminha para conversa com estudantes de psicologia, medicina e educação supervisionados por professores.</p>
+<p style="margin: 0 0 18px; font-size: 0.92em; color: #4D4446">Gratuito e anônimo. Seg. a sáb., das 8h às 22h.</p>
+<a href="https://www.podefalar.org.br" style="display: inline-flex; align-self: flex-start; align-items: center; min-height: 44px; margin-top: auto; padding: 0 20px; border-radius: 999px; background: #C8102E; color: #FFFFFF; text-decoration: none; font-weight: 700">Abrir o Pode Falar</a>
 </div>
-</details>
-<details class="card acc" open style="background: #FFFFFF; border-radius: 16px; padding: 22px">
-<summary class="acc-sum">
-<h3 style="margin: 0 0 8px; font-family: Lexend, sans-serif; font-size: 1.1em">Pessoas surdas</h3>
-<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
-</summary>
-<div class="acc-body">
-<p style="margin: 0">Nenhuma informação depende de áudio. Os canais de ajuda incluem opções por escrito, como chat e e-mail.</p>
+<div class="card app-card" style="background: #FFFFFF; border: 1px solid #E6DEDF; border-radius: 18px; padding: 24px; display: flex; flex-direction: column">
+<span style="display: block; margin: 0 0 10px; font-weight: 700; color: #A30D25; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8em">Do SUS do Distrito Federal</span>
+<svg class="deco" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.3-6-11a6 6 0 0 1 12 0c0 5.7-6 11-6 11z"></path><path d="M9.5 10h5"></path><path d="M12 7.5v5"></path></svg>
+<h3 style="margin: 12px 0 8px; font-family: Lexend, sans-serif; font-size: 1.2em">SAMia</h3>
+<p style="margin: 0 0 10px">Assistente da Secretaria de Saúde do DF. Faz perguntas e indica qual serviço da rede combina com o seu caso. Também traz exercícios de respiração e meditação.</p>
+<p style="margin: 0 0 18px; font-size: 0.92em; color: #4D4446">Gratuita e anônima. Não substitui o atendimento presencial.</p>
+<a href="https://samia.app.br/app-samia" style="display: inline-flex; align-self: flex-start; align-items: center; min-height: 44px; margin-top: auto; padding: 0 20px; border-radius: 999px; background: #C8102E; color: #FFFFFF; text-decoration: none; font-weight: 700">Abrir a SAMia</a>
 </div>
-</details>
-<details class="card acc" open style="background: #FFFFFF; border-radius: 16px; padding: 22px">
-<summary class="acc-sum">
-<h3 style="margin: 0 0 8px; font-family: Lexend, sans-serif; font-size: 1.1em">Deficiência motora</h3>
-<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
-</summary>
-<div class="acc-body">
-<p style="margin: 0">Tudo funciona pelo teclado, com foco bem visível e botões grandes, fáceis de tocar.</p>
+<div class="card app-card" style="background: #FFFFFF; border: 1px solid #E6DEDF; border-radius: 18px; padding: 24px; display: flex; flex-direction: column">
+<span style="display: block; margin: 0 0 10px; font-weight: 700; color: #A30D25; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8em">Diário de humor</span>
+<svg class="deco" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 14.5c1 1.2 2.2 1.8 3.5 1.8s2.5-.6 3.5-1.8"></path><path d="M9 9.5h.01"></path><path d="M15 9.5h.01"></path></svg>
+<h3 style="margin: 12px 0 8px; font-family: Lexend, sans-serif; font-size: 1.2em">Daylio</h3>
+<p style="margin: 0 0 10px">Registre como você está se sentindo com poucos toques, sem precisar escrever. Marque as atividades do dia e veja gráficos que mostram o que melhora ou piora o seu humor. Um bom recurso para levar à terapia.</p>
+<p style="margin: 0 0 18px; font-size: 0.92em; color: #4D4446">Gratuito, com versão premium. Para Android e iPhone.</p>
+<a href="https://daylio.net" style="display: inline-flex; align-self: flex-start; align-items: center; min-height: 44px; margin-top: auto; padding: 0 20px; border-radius: 999px; background: #C8102E; color: #FFFFFF; text-decoration: none; font-weight: 700">Abrir o Daylio</a>
 </div>
-</details>
-<details class="card acc" open style="background: #FFFFFF; border-radius: 16px; padding: 22px">
-<summary class="acc-sum">
-<h3 style="margin: 0 0 8px; font-family: Lexend, sans-serif; font-size: 1.1em">Pessoas neurodivergentes</h3>
-<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
-</summary>
-<div class="acc-body">
-<p style="margin: 0">Sem animações, sons ou pop-ups. Resumos curtos, tempo de leitura, estrutura previsível, fonte de leitura facilitada, espaçamento ampliado e modo calmo.</p>
+<div class="card app-card" style="background: #FFFFFF; border: 1px solid #E6DEDF; border-radius: 18px; padding: 24px; display: flex; flex-direction: column">
+<span style="display: block; margin: 0 0 10px; font-weight: 700; color: #A30D25; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8em">Para quem quer largar um vício</span>
+<svg class="deco" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M4 10h16"></path><path d="M9 3v4"></path><path d="M15 3v4"></path><path d="M9 15l2 2 4-4"></path></svg>
+<h3 style="margin: 12px 0 8px; font-family: Lexend, sans-serif; font-size: 1.2em">I Am Sober</h3>
+<p style="margin: 0 0 10px">Conta os dias sem álcool, cigarro ou outras substâncias. Você registra seus motivos para parar, anota o que dificulta ou ajuda cada dia e acompanha seu progresso. Tem uma comunidade de apoio entre usuários.</p>
+<p style="margin: 0 0 18px; font-size: 0.92em; color: #4D4446">Gratuito, com recursos pagos opcionais. Disponível em português.</p>
+<a href="https://iamsober.com" style="display: inline-flex; align-self: flex-start; align-items: center; min-height: 44px; margin-top: auto; padding: 0 20px; border-radius: 999px; background: #C8102E; color: #FFFFFF; text-decoration: none; font-weight: 700">Abrir o I Am Sober</a>
 </div>
-</details>
 </div>
-<p style="margin: 24px 0 0; max-width: 760px">Seguimos como referência as diretrizes internacionais WCAG (nível AA), o eMAG (Modelo de Acessibilidade em Governo Eletrônico) e a Lei Brasileira de Inclusão (Lei nº 13.146/2015).</p>
+<div class="car-ctrl">
+<button type="button" id="car-prev" aria-label="Aplicativo anterior" aria-controls="apps-track" style="width: 48px; height: 48px; border-radius: 999px; border: 2px solid #C8102E; background: #FFFFFF; color: #A30D25; cursor: pointer; display: inline-flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
+<span style="font-size: 0.9em; color: #4D4446">Deslize para o lado</span>
+<button type="button" id="car-next" aria-label="Próximo aplicativo" aria-controls="apps-track" style="width: 48px; height: 48px; border-radius: 999px; border: 2px solid #C8102E; background: #FFFFFF; color: #A30D25; cursor: pointer; display: inline-flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
+</div>
+<div class="stack" style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 20px">
+<div class="card" style="flex: 999 1 520px; min-width: 0; background: #FFFFFF; border: 2px solid #C8102E; border-radius: 20px; padding: 26px">
+<h3 style="margin: 0 0 10px; font-family: Lexend, sans-serif; font-size: 1.2em">Psicólogos nas redes sociais</h3>
+<p style="margin: 0 0 12px">Seguir profissionais de psicologia pode trazer informação de qualidade e acolhimento para o seu feed. Antes de seguir alguém:</p>
+<ul style="margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px">
+<li><strong>Confira o registro:</strong> todo psicólogo tem número no Conselho Regional de Psicologia (CRP). Você pode consultar no <a href="https://cadastro.cfp.org.br">Cadastro Nacional de Profissionais de Psicologia</a>.</li>
+<li><strong>Prefira quem explica com base em ciência</strong> e incentiva buscar atendimento quando necessário.</li>
+<li><strong>Desconfie</strong> de diagnósticos à distância, promessas de cura rápida e “fórmulas” vendidas como solução.</li>
+<li>Conteúdo de rede social informa, mas <strong>não substitui terapia</strong>.</li>
+</ul>
+</div>
+<div class="card" style="flex: 1 1 300px; min-width: 0; background: #FFFFFF; border: 1px solid #E6DEDF; border-radius: 20px; padding: 26px">
+<h3 style="margin: 0 0 10px; font-family: Lexend, sans-serif; font-size: 1.2em">Antes de instalar um app</h3>
+<ul style="margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px">
+<li>Leia a política de privacidade: alguns apps guardam dados pessoais e informações sobre sua saúde.</li>
+<li>Use bloqueio por senha quando o app oferecer.</li>
+<li>Se o app fizer você se sentir pior, pare de usar e converse com alguém de confiança.</li>
+</ul>
+</div>
+</div>
 </div>
 </section>
 
@@ -516,7 +544,7 @@ Ajustes de leitura e acessibilidade
 <footer class="footer" style="padding: 40px 20px; background: #1F1A1B; color: #E8E1E2">
 <div class="stack" style="max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 28px; justify-content: space-between">
 <div style="flex: 999 1 420px; min-width: 0">
-<p style="margin: 0 0 8px; font-family: Lexend, sans-serif; font-weight: 700; color: #FFFFFF; font-size: 1.1em">Respira DF</p>
+<p style="margin: 0 0 8px; font-family: Lexend, sans-serif; font-weight: 700; color: #FFFFFF; font-size: 1.1em">Wellmind</p>
 <p style="margin: 0 0 8px">Material informativo. Não substitui avaliação nem tratamento com profissionais de saúde.</p>
 <p style="margin: 0; font-size: 0.9em">Projeto de extensão “Acessibilidade Digital e Saúde Mental: tecnologia como ferramenta de inclusão e bem-estar” · IESB&nbsp;</p>
 </div>
@@ -527,6 +555,7 @@ Ajustes de leitura e acessibilidade
 <li><a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-mental" style="color: #FFFFFF">Ministério da Saúde</a></li>
 <li><a href="https://www.paho.org/pt/topicos/saude-mental" style="color: #FFFFFF">OPAS / OMS</a></li>
 <li><a href="https://cvv.org.br" style="color: #FFFFFF">CVV</a></li>
+<li><a href="https://cadastro.cfp.org.br" style="color: #FFFFFF">Cadastro Nacional de Psicólogos (CFP)</a></li>
 <li><a href="https://www.gov.br/governodigital/pt-br/vlibras" style="color: #FFFFFF">VLibras</a></li>
 </ul>
 <p style="margin: 12px 0 0; font-size: 0.85em">Informações conferidas em outubro de 2026.</p>
@@ -581,7 +610,7 @@ Ajustes de leitura e acessibilidade
     b.addEventListener('click', function () { estado[b.dataset.key] = !estado[b.dataset.key]; aplicar(); });
   });
 
-  var RESUMO = 'Respira DF. Página sobre saúde mental, autocuidado e equilíbrio digital no Distrito Federal. ' +
+  var RESUMO = 'Wellmind. Página sobre saúde mental, autocuidado e equilíbrio digital no Distrito Federal. ' +
     'Em emergência, ligue 192, do SAMU. Para conversar com alguém, ligue 188, do CVV. A ligação é gratuita e funciona 24 horas. ' +
     'Para começar um cuidado, procure a Unidade Básica de Saúde perto da sua casa, sem agendamento. ' +
     'Casos graves são atendidos nos CAPS, também sem agendamento. ' +
@@ -620,6 +649,21 @@ Ajustes de leitura e acessibilidade
   });
   if (mq.addEventListener) mq.addEventListener('change', sincronizar); else mq.addListener(sincronizar);
   sincronizar();
+
+  // Carrossel de aplicativos (celular e tablet)
+  var trilho = document.getElementById('apps-track');
+  function rolarApps(dir) {
+    var c = trilho.querySelector('.app-card');
+    var passo = c ? c.getBoundingClientRect().width + 14 : trilho.clientWidth * 0.85;
+    var calmo = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    trilho.scrollBy({ left: dir * passo, behavior: calmo ? 'auto' : 'smooth' });
+  }
+  document.getElementById('car-prev').addEventListener('click', function () { rolarApps(-1); });
+  document.getElementById('car-next').addEventListener('click', function () { rolarApps(1); });
+  trilho.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') { e.preventDefault(); rolarApps(1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); rolarApps(-1); }
+  });
 
   aplicar();
 })();
